@@ -21,7 +21,7 @@ public class FirstTaskApplication {
     public static void main(String[] args) {
         SpringApplication.run(FirstTaskApplication.class, args);
 
-        String excelFilePath ="C:\\Users\\1\\Downloads\\demo\\demo\\src\\main\\java\\com\\example\\demo\\task1_table.xlsx";
+        String excelFilePath = FirstTaskApplication.class.getClassLoader().getResource("task1_table.xlsx").getPath();
         List<Employee> employees = new ArrayList<>();
 
         try (FileInputStream fis = new FileInputStream(excelFilePath);
